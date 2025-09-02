@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juego de Memoria</title>
+  <link rel="stylesheet" href="memoria.css" />
+</head>
+<body>
+  <header>
+    <h1>🃏 MiniJuegos — Memoria</h1>
+  </header>
+
+  <div id="leftCol"></div>
+  <div id="rightCol"></div>
+  <canvas id="fireworks"></canvas>
+
+  <main>
+    <div id="hud">
+      <p>Movimientos: <span id="moves">0</span></p>
+      <p>Parejas encontradas: <span id="matches">0</span></p>
+      <p>Máximo intentos: <span id="maxMoves">25</span></p>
+    </div>
+
+    <section id="gameBoard" class="board"></section>
+
+    <!-- Overlay de ganar -->
+    <div id="winOverlay" class="overlay hidden">
+      <div class="overlayContent centerContent">
+        <h1>🎉 ¡GANASTE! 🎉</h1>
+        <button id="restartButtonWin" class="restartBtn">🔄 Reiniciar</button>
+      </div>
+    </div>
+
+    <!-- Overlay de perder -->
+    <div id="loseOverlay" class="overlay hidden">
+      <div class="overlayContent centerContent">
+        <div class="skullWrap">
+          <!-- Calavera SVG realista -->
+          <svg class="skullSVG" viewBox="0 0 120 120" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="g1" cx="50%" cy="35%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#dcdcdc"/>
+              </radialGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <ellipse cx="60" cy="55" rx="40" ry="38" fill="url(#g1)" stroke="#222" stroke-width="2"/>
+            <path d="M28,75 C28,95 92,95 92,75 C92,75 85,90 60,90 C35,90 28,75 28,75 Z" fill="#f3f3f3" stroke="#222" stroke-width="1.5"/>
+            <ellipse cx="44" cy="48" rx="9" ry="12" fill="#000"/>
+            <ellipse cx="76" cy="48" rx="9" ry="12" fill="#000"/>
+            <ellipse cx="44" cy="48" rx="4" ry="5" fill="#ff2b2b" opacity="0.9" filter="url(#glow)"/>
+            <ellipse cx="76" cy="48" rx="4" ry="5" fill="#ff2b2b" opacity="0.9" filter="url(#glow)"/>
+            <path d="M60,58 L54,70 L66,70 Z" fill="#000"/>
+            <rect x="46" y="74" width="6" height="6" fill="#fff" stroke="#ccc"/>
+            <rect x="54" y="74" width="6" height="6" fill="#fff" stroke="#ccc"/>
+            <rect x="62" y="74" width="6" height="6" fill="#fff" stroke="#ccc"/>
+            <rect x="70" y="74" width="6" height="6" fill="#fff" stroke="#ccc"/>
+          </svg>
+        </div>
+        <h1 class="loseTitle">PERDISTE</h1>
+        <button id="restartButtonLose" class="restartBtn fixedBottomRight">🔄 Reiniciar</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <small>Practica tu memoria — Encuentra todas las parejas 🎉</small>
+  </footer>
+
+  <!-- Sonidos -->
+  <audio id="flipSound" preload="auto" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg"></audio>
+  <audio id="winSound" preload="auto" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"></audio>
+  <audio id="loseSound" preload="auto" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+  <audio id="screamSound" preload="auto" src="https://actions.google.com/sounds/v1/human_sounds/man_screaming.ogg"></audio>
+
+  <script src="memoria.js"></script>
+</body>
+</html>
+
+
+
+
+
+

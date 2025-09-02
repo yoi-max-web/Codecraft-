@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ahorcado — MiniJuegos</title>
+  <link rel="stylesheet" href="ahorcado.css" />
+</head>
+<body>
+  <!-- Banner principal (como pediste: igual al anterior) -->
+  <header>
+    <h1>🎮 MiniJuegos 🎮</h1>
+  </header>
+
+  <!-- Decoración lateral (izq/der) -->
+  <aside class="izq">🔥</aside>
+  <aside class="der">💥</aside>
+
+  <main id="gameWrapper">
+    <section id="leftPanel">
+      <canvas id="ahorcadoCanvas" width="320" height="320" aria-label="Dibujo del ahorcado"></canvas>
+
+      <div id="hud">
+        <h2 id="tituloJuego">Ahorcado</h2>
+        <p id="wordDisplay" class="wordDisplay">_ _ _ _ _</p>
+        <p>Intentos restantes: <strong id="attemptsLeft">6</strong></p>
+        <p id="message" class="message" aria-live="polite"></p>
+
+        <div id="controls">
+          <!-- input visible en pantallas grandes; oculto en móvil para que no aparezca el teclado nativo -->
+          <label for="letterInput" class="sr-only">Letra</label>
+          <input id="letterInput" maxlength="1" type="text" autocomplete="off" inputmode="latin" />
+          <button id="guessButton">Adivinar</button>
+          <button id="restartButton">Reiniciar</button>
+        </div>
+      </div>
+    </section>
+
+    <aside id="rightPanel">
+      <h3>Teclado</h3>
+      <div id="keyboard" role="application" aria-label="Teclado de letras"></div>
+
+      <div id="info">
+        <p>Usa el teclado físico (PC) o toca las letras en pantalla (móvil). Las teclas usadas se desactivan.</p>
+        <p class="small">Consejo: agrega palabras nuevas en <code>ahorcado.js</code>.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <small>Hecho para la expoctecnica</small>
+  </footer>
+
+  <script src="ahorcado.js"></script>
+</body>
+</html>

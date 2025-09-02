@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MiniJuegos - Piedra Papel o Tijera</title>
+  <link rel="stylesheet" href="juego1.css">
+</head>
+<body>
+  <!-- Banner principal -->
+  <header>
+    <h1>🎮 MiniJuegos 🎮</h1>
+  </header>
+
+  <!-- Decoración lateral -->
+  <aside class="izq">🔥</aside>
+  <aside class="der">💥</aside>
+
+  <!-- Juego -->
+  <main>
+    <h2>✊✋✌ Piedra, Papel o Tijera</h2>
+
+    <div class="botones">
+      <button onclick="jugar('✊')">Piedra</button>
+      <button onclick="jugar('✋')">Papel</button>
+      <button onclick="jugar('✌')">Tijera</button>
+    </div>
+
+    <div id="juego">
+      <div class="carta">
+        <h3>Jugador</h3>
+        <div class="mano izquierda" id="manoJugador">✊</div>
+      </div>
+      <div class="carta">
+        <h3>CPU</h3>
+        <div class="mano derecha" id="manoCPU">✊</div>
+      </div>
+    </div>
+
+    <h2 id="resultado"></h2>
+  </main>
+
+  <!-- Sonidos -->
+<audio id="sonidoGanar" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c7f5d8e2d5.mp3?filename=success-fanfare-trumpets-6185.mp3"></audio>
+<audio id="sonidoPerder" src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_8b123c2e0e.mp3?filename=negative-beeps-99469.mp3"></audio>
+<audio id="sonidoEmpate" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f3c5f1b3a.mp3?filename=notification-3-15976.mp3"></audio>
+
+  <footer>
+    <small>Hecho para la expoctecnica</small>
+  </footer>
+
+  <!-- Script -->
+  <script src="juego1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

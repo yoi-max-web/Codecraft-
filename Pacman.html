@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pac-Man Ultimate</title>
+  <link rel="stylesheet" href="Pacman.css">
+</head>
+<body>
+    <!-- Banner principal -->
+  <header>
+    <h1>🎮 MiniJuegos 🎮</h1>
+  </header>
+
+  <!-- Decoración lateral -->
+  <aside class="izq">🔥</aside>
+  <aside class="der">💥</aside>
+
+  <div id="hud">
+    <span>Puntaje: <span id="score">0</span></span>
+    <span>Vidas: <span id="lives">3</span></span>
+    <span>Nivel: <span id="level">1</span></span>
+    <button id="btnStart">Start</button>
+    <button id="btnPause">Pause</button>
+    <button id="btnReset">Reset</button>
+  </div>
+
+  <canvas id="gameCanvas" width="448" height="496"></canvas>
+
+  <!-- Overlay Game Over -->
+  <div id="gameOverOverlay">
+    <h1>GAME OVER</h1>
+    <p>Puntaje final: <span id="finalScore"></span></p>
+    <button onclick="resetGame()">Reiniciar</button>
+  </div>
+
+    <footer>
+    <small>Hecho para la expoctecnica</small>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <script src="Pacman.js"></script>
+</body>
+</html>
+
